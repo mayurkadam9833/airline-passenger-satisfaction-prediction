@@ -1,4 +1,5 @@
 COLUMNS: 
+ id                                 :  int64
  Gender                             :  object 
  Customer Type                      :  object 
  Age                                :  int64  
