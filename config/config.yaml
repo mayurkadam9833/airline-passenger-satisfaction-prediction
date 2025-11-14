@@ -1,0 +1,8 @@
+artifacts_root: artifacts 
+
+data_ingestion: 
+ root_dir: artifacts/data_ingestion                                             # main folder for data ingestion step 
+ source_url: https://github.com/mayurkadam9833/Datasets/raw/refs/heads/main/passenger_satisfaction_data.zip  # url to download data
+ local_data_path: artifacts/data_ingestion/passenger_satisfaction_data.zip      # download data path
+ unzip_dir: artifacts/data_ingestion                                            # unzip data directory
+
