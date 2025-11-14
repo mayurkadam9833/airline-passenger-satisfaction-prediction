@@ -1,6 +1,6 @@
 from src.APSP.constants import *
 from src.APSP.utils.common import read_yaml,create_dir
-from src.APSP.entity.config_entity import DataIngestionConfig 
+from src.APSP.entity.config_entity import DataIngestionConfig,DataValidationConfig
 
 
 
@@ -29,3 +29,17 @@ class ConfigManager:
             unzip_dir=config.unzip_dir
         )
         return data_ingestion_config
+    
+    def get_data_validation_config(self)-> DataValidationConfig: 
+        config=self.config.data_validation 
+        schema=self.schema.COLUMNS 
+
+        create_dir([config.root_dir])
+
+        data_validation_config=DataValidationConfig(
+            root_dir=config.root_dir, 
+            unzip_data_path=config.unzip_data_path, 
+            status_file=config.status_file, 
+            all_schema=schema
+        )
+        return data_validation_config
